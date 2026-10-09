@@ -21,8 +21,7 @@
     enable32Bit = true; # Required for 32-bit applications like Steam
   };
 
-  # OPTION A: If using an NVIDIA GPU, uncomment the following block:
-  /*
+  OPTION A: If using an NVIDIA GPU, uncomment the following block:
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -31,7 +30,6 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  */
 
   # OPTION B: If using an AMD GPU, open-source drivers (AMDGPU) are enabled by default.
   # Extra vulkan drivers can be specified here if needed:
