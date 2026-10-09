@@ -25,6 +25,34 @@
     userEmail = "pyradox11@gmail.com";
   };
 
+  programs.plasma = {
+    enable = true;
+
+    # Workspace appearance
+    workspace = {
+      clickToOpenHasEffect = false;
+      lookAndFeel = "org.kde.breezedark.desktop";
+      wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Elarun/";
+    };
+
+    # Hotkeys / Shortcuts
+    shortcuts = {
+      ksmserver = {
+        "Lock Session" = "Meta+L";
+      };
+      kwin = {
+        "Expose" = "Meta+F10";
+        "Switch to Desktop 1" = "Meta+1";
+        "Switch to Desktop 2" = "Meta+2";
+      };
+    };
+
+    # Window rules
+    configFile = {
+      "kdeglobals"."General"."font" = "Noto Sans,10,-1,5,50,0,0,0,0,0";
+    };
+  };
+
   # Zsh Shell Configuration
   programs.zsh = {
     enable = true;
