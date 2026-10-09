@@ -2,8 +2,8 @@
 
 {
   # User details
-  home.username = "yourusername"; # Must match the username in common.nix
-  home.homeDirectory = "/home/yourusername";
+  home.username = "domenik"; # Must match the username in common.nix
+  home.homeDirectory = "/home/domenik";
 
   # User packages available on both machines
   home.packages = with pkgs; [
