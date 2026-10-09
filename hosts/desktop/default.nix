@@ -28,7 +28,7 @@
     powerManagement.enable = false;
     open = false; # Set to true if using modern Turing/Ampere+ GPUs with open drivers
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
   # OPTION B: If using an AMD GPU, open-source drivers (AMDGPU) are enabled by default.
