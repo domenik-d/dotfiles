@@ -15,7 +15,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Define your primary user account
-  users.users.yourusername = { # Replace 'yourusername' with your actual username
+  users.users.domenik = { # Replace 'yourusername' with your actual username
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
     shell = pkgs.zsh; # Sets Zsh as default user shell
