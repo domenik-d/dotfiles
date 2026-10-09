@@ -21,8 +21,8 @@
   # Git Configuration
   programs.git = {
     enable = true;
-    userName = "Your Name";
-    userEmail = "your.email@example.com";
+    userName = "domenik-d";
+    userEmail = "pyradox11@gmail.com";
   };
 
   # Zsh Shell Configuration
