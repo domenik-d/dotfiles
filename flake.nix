@@ -3,14 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # 1. Add plasma-manager input
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, plasma-manager, ... }@inputs: {
     nixosConfigurations = {
       
       # 1. Home Desktop Configuration
@@ -42,6 +47,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            # 2. Include plasma-manager module inside Home Manager
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             home-manager.users.yourusername = import ./modules/home.nix;
           }
         ];
