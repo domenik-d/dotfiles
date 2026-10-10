@@ -21,7 +21,7 @@
     enable32Bit = true; # Required for 32-bit applications like Steam
   };
 
-  OPTION A: If using an NVIDIA GPU, uncomment the following block:
+  #NVIDIA GPU
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -30,18 +30,11 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
-
-  # OPTION B: If using an AMD GPU, open-source drivers (AMDGPU) are enabled by default.
-  # Extra vulkan drivers can be specified here if needed:
-  # hardware.graphics.extraPackages = with pkgs; [ amdvlk ];
-
   # ---------------------------------------------------------------------------
   # Desktop Applications & Game Support
   # ---------------------------------------------------------------------------
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports for Steam Remote Play
-    dedicatedServer.openFirewall = true;
   };
 
   # Enable GameMode to optimize OS performance automatically when running games
